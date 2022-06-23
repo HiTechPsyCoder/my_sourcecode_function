@@ -1,9 +1,9 @@
 import papermill as pm
 def lambda_handler(event, context):   
     pm.execute_notebook(
-   'notebook.ipynb',
+   's3://papermillbucket/notebook.ipynb',
    's3://papermillbucket/output.ipynb',
 )
-    response = {'text':'lamda is working'}
+    response = {'text':'worked'}
     print(response['text'])
     return response['text']
